@@ -1,4 +1,4 @@
-val lines = scala.io.Source.fromFile("C:\\Users\\Joel\\Documents\\adventofcode\\2018\\inputday1.txt").getLines.toVector
+val lines = scala.io.Source.fromFile(".\\inputday1.txt").getLines.toVector
 
 var sum = 0
 for(i <- lines.indices){
