@@ -1,0 +1,21 @@
+import sys
+
+current_day = dayflag
+
+
+def p1(data):
+    return
+
+
+def p2(data):
+    return
+
+
+if __name__ == "__main__":
+    fp = f"ins/{current_day}.in"
+    with open(fp) as f:
+        lines = fp.readlines()
+        f.close()
+
+    print(f"part 1: {p1(lines)}")
+    # print(f"part 2: {p2(lines)}")
