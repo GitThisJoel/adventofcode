@@ -10,7 +10,7 @@ string_day = string_day[-2:]
 if len(sys.argv) > 1:
     lang = sys.argv[1]
 else:
-    print("specify with language")
+    print("specify the language")
     exit(1)
 
 fp = f"{year}/{string_day}.{lang}"
