@@ -16,5 +16,5 @@ else:
 fp = f"{year}/{string_day}.{lang}"
 
 os.system(
-    " && ".join([f"cp templates/{lang} {fp}", f'sed -i "s/dayflag/{day}/g" {fp}'])
+    " && ".join([f"cp templates/template.{lang} {fp}", f'sed -i "s/1337/{day}/g" {fp}'])
 )
