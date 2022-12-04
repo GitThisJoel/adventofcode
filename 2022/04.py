@@ -12,8 +12,7 @@ def p1(data):
         l, r = line.split(",")
         ll = list(map(int, l.split("-")))
         rr = list(map(int, r.split("-")))
-
-        if (ll[0] <= rr[0] and ll[1] >= rr[1]) or (rr[0] <= ll[0] and rr[1] >= ll[1]):
+        if (ll[0] <= rr[0] <= rr[1] <= ll[1]) or (rr[0] <= ll[0] <= ll[1] <= rr[1]):
             c += 1
 
     return c
