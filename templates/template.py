@@ -7,7 +7,7 @@ from utils import *
 
 def p1(data):
     lines = get_lines(data)
-    chunks = data.split("\n\n")
+    chunks = get_chunks(data)
 
     return
 
@@ -18,6 +18,7 @@ def p2(data):
 
 if __name__ == "__main__":
     data = read_file(f"ins/1337.in")
+    # data = read_file(f"samples/1337.in")
 
     print(f"part 1: {p1(data)}")
     # print(f"part 2: {p2(data)}")
