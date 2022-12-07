@@ -37,32 +37,21 @@ def read_data(data):
             if len(cmd) == 2:  # cd
                 _, dn = cmd
                 if dn == "..":
-                    # print(ds, dn)
                     ds.pop(-1)
                 elif dn == "/":  # in ds:
-                    # ind = ds.index(dn)
-                    # ds = ds[: ind + 1]
                     ds = ["/"]
                 else:
                     ds.append(dn)
-                # else "ls", just cont.
-                # print("read", cmd, "\t", ds)
         else:
             t, n = line.split()
             if t != "dir":
                 t = int(t)
 
             d = "_".join(ds)
-            # if d == "zsmhsbp":
-            #     print(d, t, n)
             if d in fs:
                 fs[d].add((t, n))
             else:
                 fs[d] = {(t, n)}
-            # print(fs[d])
-
-    # for f, dn in fs.items():
-    #     print(f, "\t", [n for d, n in dn if d == "dir"])
 
     calc_dir_sizes("/")  # calc all sizes
     return
@@ -95,14 +84,9 @@ def p2(data):
         for key, val in sorted(dir_sizes.items(), key=lambda lam: lam[1], reverse=True)
     }
 
-    print("tot =", tot)
-    print("diff\n" + str(diff))
-
     prev = 0
     for _, v in s_sizes.items():
-        print(v)
         if v - diff < 0:
-            print("here")
             return prev
         prev = v
 
@@ -111,5 +95,5 @@ if __name__ == "__main__":
     data = read_file(f"ins/07.in")
     # data = read_file(f"samples/07.in")
 
-    # print(f"part 1: {p1(data)}")
+    print(f"part 1: {p1(data)}")
     print(f"part 2: {p2(data)}")
