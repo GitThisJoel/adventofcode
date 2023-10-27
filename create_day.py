@@ -4,6 +4,8 @@ from datetime import date
 year = date.today().year
 day = date.today().day
 
+# lang year day
+
 if len(sys.argv) > 1:
     lang = sys.argv[1]
 else:
