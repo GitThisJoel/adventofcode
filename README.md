@@ -8,4 +8,5 @@ My solutions for previous (and current) years of Advent of Code.
 | 2019 | 5      |
 | 2020 | 12     |
 | 2021 | 11     |
-| 2022 | wip    |
+| 2022 | 21     |
+| 2023 | wip    |
