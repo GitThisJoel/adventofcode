@@ -25,6 +25,10 @@ fp = f"{year}/{string_day}.{lang}"
 
 os.system(
     " && ".join(
-        [f"cp templates/template.{lang} {fp}", f'sed -i "s/1337/{string_day}/g" {fp}']
+        [
+            f"cp templates/template.{lang} {fp}",
+            f'sed -i "s/dddd/{string_day}/g" {fp}',
+            f'sed -i "s/yyyy/{year}/g" {fp}',
+        ]
     )
 )

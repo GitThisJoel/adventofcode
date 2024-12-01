@@ -23,8 +23,8 @@ def p2(data):
 
 
 if __name__ == "__main__":
-    data = read_file(f"ins/1337.in")
-    data = read_file(f"samples/1337.in")
+    data = read_file(f"yyyy/ins/dddd.in")
+    data = read_file(f"yyyy/samples/dddd.in")
 
     print(f"part 1: {p1(data)}")
     print(f"part 2: {p2(data)}")
