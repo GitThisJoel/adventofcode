@@ -7,6 +7,10 @@ def get_ints(data):
     return [int(d) for d in data.split()]
 
 
+def get_int_lines(data):
+    return [get_ints(d) for d in get_lines(data)]
+
+
 def get_chunks(data):
     css = [d.split("\n") for d in data.strip("\n").split("\n\n")]
     return [[c.strip() for c in cs] for cs in css]
