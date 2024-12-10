@@ -86,8 +86,7 @@ def p2(data):
 
 
 if __name__ == "__main__":
-    data = read_file(f"2024/samples/10_1.in")
-    data = read_file(f"2024/samples/10_2.in")
+    data = read_file(f"2024/samples/10.in")
     data = read_file(f"2024/ins/10.in")
 
     # conv str -> int
