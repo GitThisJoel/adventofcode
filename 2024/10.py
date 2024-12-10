@@ -30,18 +30,16 @@ def bfs(start, G, data, goal=9):
     Q = [start]
     vis = {start}
     total = 0
-    goals = []
     while len(Q) > 0:
         v = Q.pop()
         if data[v[0]][v[1]] == goal:
-            goals.append(v)
             total += 1
         for neigh in G.get(v, set()):
             if neigh in vis:
                 continue
             vis.add(neigh)
             Q.append(neigh)
-    return total, goals
+    return total
 
 
 def count_paths(zeroes, G, data, goal=9):
@@ -61,11 +59,9 @@ def count_paths(zeroes, G, data, goal=9):
             dists[neigh] += 1
             Q.append(neigh)
 
-    R = len(data)
-    C = len(data[0])
     tot = 0
-    for i in range(R):
-        for j in range(C):
+    for i in range(len(data)):
+        for j in range(len(data[0])):
             if data[i][j] == goal:
                 tot += dists.get((i, j), 0)
     return tot
@@ -75,14 +71,13 @@ def p1(data):
     G, zeroes = create_graph(data)
     ans = 0
     for zero in zeroes:
-        t, _ = bfs(zero, G, data)
-        ans += t
+        ans += bfs(zero, G, data)
     return ans
 
 
 def p2(data):
     G, zeroes = create_graph(data)
-    return count_paths(zeroes, G, data, goal=9)
+    return count_paths(zeroes, G, data)
 
 
 if __name__ == "__main__":
