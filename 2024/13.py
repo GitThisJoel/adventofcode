@@ -15,27 +15,6 @@ def parse(chunks, extra=0):
     return CM
 
 
-def p1_bruteforce(data):
-    chunks = get_chunks(data)
-    CM = parse(chunks)
-    ans = 0
-    for cm in CM:
-        min_presses = 0, 0
-        min_cost = 10**9
-        (x1, y1), (x2, y2), (px, py) = cm
-        for pa in range(101):
-            for pb in range(101):
-                cost = 3 * pa + pb
-                if cost > min_cost:
-                    continue
-                if (pa * x1 + pb * x2 == px) and (pa * y1 + pb * y2 == py):
-                    min_presses = pa, pb
-                    min_cost = cost
-        if all(p != 0 for p in min_presses):
-            ans += min_cost
-    return ans
-
-
 def find_presses(CM):
     ans = 0
     for cm in CM:
