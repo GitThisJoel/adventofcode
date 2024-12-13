@@ -16,6 +16,13 @@ def parse(chunks, extra=0):
 
 
 def find_presses(CM):
+    """
+    Given:
+    P_a * x_1 + P_b * x_2 = A_x
+    P_a * y_1 + P_b * y_2 = A_y
+
+    Find P_a and P_b using x, y and A.
+    """
     ans = 0
     for cm in CM:
         (x1, y1), (x2, y2), (px, py) = cm
@@ -41,13 +48,6 @@ def p2(data):
 
 
 if __name__ == "__main__":
-    """
-    Given:
-    P_a * x_1 + P_b * x_2 = A_x
-    P_a * y_1 + P_b * y_2 = A_y
-
-    Find P_a and P_b using x, y and A.
-    """
     data = read_file(f"2024/samples/13.in")
     data = read_file(f"2024/ins/13.in")
 
