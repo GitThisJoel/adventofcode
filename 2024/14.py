@@ -6,15 +6,14 @@ sys.path.extend([".", ".."])
 
 from utils import *
 
+R, C = 103, 101
 
-def calc_score(seconds, lines):
-    R, C = 103, 101
-    # R, C = 7, 11
+
+def calc_score(seconds, int_lines):
     MR = R // 2
     MC = C // 2
     quads = [0] * 4
-    for line in lines:
-        x, y, dx, dy = scanf("p=%d,%d v=%d,%d", line)
+    for x, y, dx, dy in int_lines:
         x = (x + dx * seconds) % C
         y = (y + dy * seconds) % R
         if x < MC and y < MR:  # Q1
@@ -26,29 +25,29 @@ def calc_score(seconds, lines):
         elif x > MC and y > MR:  # Q4
             quads[3] += 1
 
-    ans = 1
+    score = 1
     for n in quads:
-        ans *= n
-    return ans
+        score *= n
+    return score
 
 
 def p1(data):
     lines = get_lines(data)
-    return calc_score(100, lines)
+    int_lines = [scanf("p=%d,%d v=%d,%d", line) for line in lines]
+    return calc_score(100, int_lines)
 
 
 def p2(data):
     lines = get_lines(data)
-    R, C = 103, 101
-    min_score = calc_score(0, lines)
+    int_lines = [scanf("p=%d,%d v=%d,%d", line) for line in lines]
+    min_score = calc_score(0, int_lines)
     for seconds in range(1, R * C):
-        score = calc_score(seconds, lines)
+        score = calc_score(seconds, int_lines)
         if score < min_score:
             min_score = score
             print(f"{seconds=}")
             B = [["." for _ in range(C)] for _ in range(R)]
-            for line in lines:
-                x, y, dx, dy = scanf("p=%d,%d v=%d,%d", line)
+            for x, y, dx, dy in int_lines:
                 x = (x + dx * seconds) % C
                 y = (y + dy * seconds) % R
                 B[y][x] = "*"
@@ -57,7 +56,6 @@ def p2(data):
             if "n" in ans:
                 break
             print()
-
     return seconds
 
 
