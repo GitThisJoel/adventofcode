@@ -1,3 +1,7 @@
+four_dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+eight_dirs = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
+
+
 def get_lines(data):
     return data.strip("\n").split("\n")
 
