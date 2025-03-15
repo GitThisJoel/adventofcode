@@ -22,6 +22,7 @@ string_day = "0" + str(day)
 string_day = string_day[-2:]
 
 fp = f"{year}/{string_day}.{lang}"
+fp = f"{year}/{string_day}.{lang}"
 
 os.system(
     " && ".join(
@@ -29,6 +30,7 @@ os.system(
             f"cp templates/template.{lang} {fp}",
             f'sed -i "s/dddd/{string_day}/g" {fp}',
             f'sed -i "s/yyyy/{year}/g" {fp}',
+            f"touch {year}/samples/{string_day}.in {year}/ins/{string_day}.in",
         ]
     )
 )
