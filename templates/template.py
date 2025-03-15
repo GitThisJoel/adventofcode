@@ -1,7 +1,8 @@
 import sys
-from pprint import pprint
 
 sys.path.extend([".", ".."])
+
+from pprint import pprint
 
 from utils import *
 
