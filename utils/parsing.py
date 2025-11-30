@@ -1,29 +1,28 @@
-four_dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-eight_dirs = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
+from pathlib import Path
 
 
-def get_lines(data):
+def get_lines(data: str) -> list[str]:
     return data.strip("\n").split("\n")
 
 
-def get_ints(data):
+def get_ints(data: str) -> list[int]:
     data = data.strip("\n")
     return [int(d) for d in data.split()]
 
 
-def get_int_lines(data):
+def get_int_lines(data: str) -> list[list[int]]:
     return [get_ints(d) for d in get_lines(data)]
 
 
-def get_chunks(data):
+def get_chunks(data: str) -> list[list]:
     css = [d.split("\n") for d in data.strip("\n").split("\n\n")]
     return [[c.strip() for c in cs] for cs in css]
 
 
-def get_int_chunks(data):
+def get_int_chunks(data: str) -> list[list[int]]:
     data = data.strip("\n")
     return [[int(c) for c in d.split()] for d in data.split("\n\n")]
 
 
-def read_file(fp, mode="r"):
-    return open(fp, mode).read().strip("\n")
+def read_file(fp: str | Path) -> str:
+    return open(fp, "r").read().strip("\n")

@@ -1,10 +1,4 @@
-import sys
-
-sys.path.extend([".", ".."])
-
-from pprint import pprint
-
-from utils import *
+from utils.parsing import get_chunks, get_lines, read_file
 
 
 def p1(data):
@@ -24,8 +18,8 @@ def p2(data):
 
 
 if __name__ == "__main__":
-    data = read_file(f"yyyy/ins/dddd.in")
-    data = read_file(f"yyyy/samples/dddd.in")
+    data = read_file("yyyy/ins/dddd.in")
+    data = read_file("yyyy/samples/dddd.in")
 
     print(f"part 1: {p1(data)}")
     print(f"part 2: {p2(data)}")
