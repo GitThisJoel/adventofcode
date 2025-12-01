@@ -1,20 +1,20 @@
 from utils.parsing import get_chunks, get_lines, read_file
 
 
-def p1(data):
+def p1(data: str) -> int:
     lines = get_lines(data)
     chunks = get_chunks(data)
 
     ans = 0
-    return 0
+    return ans
 
 
-def p2(data):
+def p2(data: str) -> int:
     lines = get_lines(data)
     chunks = get_chunks(data)
 
     ans = 0
-    return 0
+    return ans
 
 
 if __name__ == "__main__":

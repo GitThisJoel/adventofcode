@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import os
 import re
@@ -12,7 +11,6 @@ def latest_year() -> Path:
     return sorted(ROOT_DIR.rglob("[0-9]" * 4))[-1]
 
 
-# TODO: make work for both 1, 01, 10, 20 14, 21 9, etc.
 def latest() -> Path:
     year_dir = latest_year()
     ptr = re.compile(r".+\/[0-9][0-9]\..+")
@@ -24,8 +22,8 @@ def normalize_target(arg: str | None) -> Path:
     accept:
     - yyyy/dd.py
     - yyyy-dd
-    - dd (defaults to current year)
-
+    - dd (defaults to latest year)
+    - none (defaults to latest year and day)
     """
     if arg is None or len(arg.strip()) == 0:
         return latest()
