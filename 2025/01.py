@@ -3,7 +3,7 @@ from utils.parsing import get_lines, read_file
 MOD = 100
 
 
-def solve(data, intermediate_zeros: bool) -> int:
+def solve(data: str, intermediate_zeros: bool) -> int:
     lines = get_lines(data)
     pos, ans = 50, 0
     for line in lines:
@@ -21,11 +21,11 @@ def solve(data, intermediate_zeros: bool) -> int:
     return ans
 
 
-def p1(data) -> int:
+def p1(data: str) -> int:
     return solve(data, intermediate_zeros=False)
 
 
-def p2(data) -> int:
+def p2(data: str) -> int:
     return solve(data, intermediate_zeros=True)
 
 
