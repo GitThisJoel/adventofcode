@@ -5,6 +5,14 @@ def get_lines(data: str) -> list[str]:
     return data.strip("\n").split("\n")
 
 
+def get_single_digits_ints(data: str) -> list[int]:
+    return [int(d) for d in data.strip()]
+
+
+def get_single_digits_int_lines(data: str) -> list[list[int]]:
+    return [get_single_digits_ints(d) for d in get_lines(data)]
+
+
 def get_ints(data: str) -> list[int]:
     data = data.strip("\n")
     return [int(d) for d in data.split()]
