@@ -5,7 +5,9 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "scipy>=1.16.3",
     "tqdm>=4.67.1",
+    "z3-solver>=4.15.4.0",
 ]
 
 [tool.uv]
