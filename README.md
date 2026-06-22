@@ -11,19 +11,20 @@ My solutions for previous (and current) years of Advent of Code.
 | 2022 | 21     |
 | 2023 | 10     |
 | 2024 | 23     |
-| 2025 | 1      |
-
+| 2025 | 12     |
 
 # Usage
 
-To create a day: 
+To create a day:
 
 ```sh
 uv run create_day.py <language> <year> <day>
-uv run create_day.py # defaults to py and today's date 
+
+uv run create_day.py # defaults to py and today's date
 ```
 
 To run a day either of these
+
 ```sh
 uv run run_day.py path/to/file
 uv run run_day.py <year>-<day>
