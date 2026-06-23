@@ -34,6 +34,7 @@ def main() -> None:
     os.system(
         " && ".join(
             [
+                f"mkdir -p {year}/samples {year}/ins",
                 f"cp templates/template.{lang} {fp}",
                 f'sed -i "s/dddd/{string_day}/g" {fp}',
                 f'sed -i "s/yyyy/{year}/g" {fp}',
